@@ -11,6 +11,9 @@
 # arism and if discovered may lead to serious penalties. Copy and paste of this program is on-
 # ly permmited with a direct reference to the program writer(see below).
 #
+# NOTE: SECOND CALIBRATION MAY BE DIFFERENT ON DIFFERENT DEVICES, CHANGE THE FLOAT VALUE AT
+# LINE 36 ACCORDINGLY TO CALIBRATE WITH ONE SECOND OF RUNTIME ON YOUR SYSTEM.
+#
 # Copyright 2023, Shicheng.Z
 #*/
 #include <stdio.h>
@@ -31,6 +34,7 @@ int main()
                 {
                         printf("%f\n",numbernumber / 100000);
                         numbernumber = numbernumber + 2.6;
+                        // CHANGE THE VALUE IF NESSESARY^
                 }       
         }
 }
