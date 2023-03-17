@@ -15,6 +15,11 @@
  * of the value prompts.   
  * 
  * Created on February 26th, 2023.
+ *
+ * March 16th Update: A bug regarding the simplification process has been 
+ * discovered in the code and I am in the process of fixing it, once the 
+ * process is done, this program will be taken down and the fixed program
+ * will be put in its place.
  */
 #include <stdio.h>
 #include <stdlib.h>
