@@ -16,7 +16,7 @@
  * counterparts in order to equal the input number of the same attribute in the 
  * original/originally inputted array.
  * 
- * This is only the baby version of my recreation of the new enigma machine, several 
+ * This is only the baby version of my recreation of the new enigma machine, several updates
  * will follow to increase the complexity and security of the new code. If you really
  * to use this program in your programs, please leave a reference to me and if you find
  * anything wrong with the input of certain values, please notify me. Entering certain 
