@@ -1,3 +1,30 @@
+/* This is a C program designed to be a basic replication of the Nazi Enigma 
+ * Encoding and decoding machine for sending messages. Unlike the real enigma,
+ * this program(at current) does not have the 1.65 quintillion possibilities
+ * that the original enigma possesses. 
+ *
+ * The main Algorithm/Logic used at the original publication on the 22nd of
+ * March 2023 converts the inputted numbers(substitute for letters) into five 
+ * series of numbers/letters that are outputted, which is the numbers' encrypted 
+ * form. The first line prints 1 for a composite number, or 0 for a prime number.
+ * The second line prints the prime numbers as the prime number plus the scrambler
+ * number(see code below), and displays the composite numbers as 0. The third line 
+ * prints the exact same values, but the prime number + scrambler values are now
+ * in their symbol/letter form. The fourth line prints the smallest factors of the
+ * composite numbers in their place, and prints 0 for the prime number places, while
+ * the last line prints the factor which are needed to multiply with the fourth line
+ * counterparts in order to equal the input number of the same attribute in the 
+ * original/originally inputted array.
+ * 
+ * This is only the baby version of my recreation of the new enigma machine, several 
+ * will follow to increase the complexity and security of the new code. If you really
+ * to use this program in your programs, please leave a reference to me and if you find
+ * anything wrong with the input of certain values, please notify me. Entering certain 
+ * values such as negative numbers may trigger segmentaion fault or flaoting point exception
+ * on your devices, or simply just output the scrambler as 0 in some bizzare cases.
+ *
+ * 22nd March, 2023.  Shicheng.Z
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
