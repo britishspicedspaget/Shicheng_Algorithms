@@ -23,6 +23,20 @@
  * values such as negative numbers may trigger segmentaion fault or flaoting point exception
  * on your devices, or simply just output the scrambler as 0 in some bizzare cases.
  *
+ * Example code:
+ *
+ * helloworld as input:
+ * Attribute Size Def: 10
+ * Values: 104, 101, 108, 108, 111, 119, 111, 114, 108, 100
+ * (number values of: h, e, l, l, o, w, o, r, l, d)
+ * Output:
+ *	1 - 0 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 -
+ *      0 - 103 - 0 - 0 - 0 - 0 - 0 - 0 - 0 - 0 -
+ *	0 - g - 0 - 0 - 0 - 0 - 0 - 0 - 0 - 0 -
+ *	2 - 0 - 2 - 2 - 3 - 7 - 3 - 2 - 2 - 2 -
+ *	52 - 0 - 54 - 54 - 37 - 17 - 37 - 57 - 54 - 50 -
+ *	Scrambler = 2
+ *
  * 22nd March, 2023.  Shicheng.Z
  */
 #include <stdio.h>
