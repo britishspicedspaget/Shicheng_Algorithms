@@ -12,7 +12,11 @@
 # ly permmited with a direct reference to the program writer(see below).
 #
 # NOTE: SECOND CALIBRATION MAY BE DIFFERENT ON DIFFERENT DEVICES, CHANGE THE FLOAT VALUE AT
-# LINE 36 ACCORDINGLY TO CALIBRATE WITH ONE SECOND OF RUNTIME ON YOUR SYSTEM.
+# LINE 36 ACCORDINGLY TO CALIBRATE WITH ONE SECOND OF RUNTIME ON YOUR SYSTEM.  
+#
+# March 21st update: It seems that the program maxes out at 671.088623 programed seconds.
+# I will attempt to solve this problem. However, due to it's nature, the bug may be unsolvable
+# because it may have pushed the INT_MAX realm limit too far, in which case I will also update.
 #
 # Copyright 2023, Shicheng.Z
 #*/
