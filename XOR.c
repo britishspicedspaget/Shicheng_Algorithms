@@ -1,3 +1,47 @@
+/* This is a C program designed to be a basic bitwise XOR function with out using
+* the ^ sign(which is the bitwise XOR sign in C code). It converts the decimal 
+* decimal numbers into reversed binary, which then goes through the XOR calculation,
+* which is that if the bits of binary are the same in both binary numbers, say if:
+* 
+* #DEF attr1[x] representing 5 in decimal, attr2[x] representing 3 in decimal
+* 
+* attr1 = {1, 0, 1} (5 in decimal)
+* attr2 = {1, 1} (3 in decimal)
+* 
+* the induvidual integers in the array will combine for form a new number, which forms
+* binary integer, which goes like this:
+*
+* attr1 = {1, 0, 1}
+* attr2 = {0, 1, 1} (0 was added to make the calculation performable as XOR requires arrays of equal length).
+* XOR(attr1[], attr2[]) = (in pseudocode)
+*	if(attr1[n] == attr2[n])
+*	ex: attr1[n] == 1 && attr2[n] == 1
+* 	then attr3[n](result of calculation) = 0
+*	else
+*	ex: attr1[n] == 0 && attr2[n] == 1
+*	then attr3[n] = 1;
+* 	repeat until n == x, then break(for function in C)
+* 
+* so here:
+* 1 0 1
+* 0 1 1
+*_______
+* 1 1 0
+* so attr3 = {1, 1, 0}(6 in binary)
+*
+* then the new binary number is converted back to decimal, using the conversion algorithm: sumof((x)2 = digits of x * their respective power of 2 until):
+* (110)2 --->
+* (110)2 = (0 * 2 to power of 0) + (1 * 2 to power of 1) + (1 * 2 to power of 2)(rep until exponent = x)
+* (110)2 = 0 + 2 + 4
+* (110)2 = (6)10
+* 
+* Please note that this is only a first version, and this program is unable to take anything other than positive integers, if letters are entered,
+* The program will enter a while loop, printing out all numbers from 0~25, and 0 beside it, else if negative integers are entered, the program will freeze.
+* A version capable of running on negative inputs will be coming soon.
+*
+* Please also DO NOT copy and paste this program and claim credit, if you wish to use this algorithm, please leave a reference in your own program.
+* Copyright May 5th, 2023. Shicheng.Z
+*/
 #include <stdio.h>
 int power(int base, int exponent);
 int largest(int number, int number2);
@@ -111,6 +155,7 @@ int main()
 		attr4[sks] = attr3[sks] * power(2, sks);
 	}
 	int result = 0;
+	//Combine for final result.
 	for(int sks1 = 0;sks1 < spare;sks1++)
 	{
 		result = result + attr4[sks1];
