@@ -40,7 +40,7 @@
 * A version capable of running on negative inputs will be coming soon.
 *
 * Please also DO NOT copy and paste this program and claim credit, if you wish to use this algorithm, please leave a reference in your own program.
-* Copyright May 5th, 2023. Shicheng.Z
+* Copyrighted on May 5th, 2023. Shicheng.Z
 */
 #include <stdio.h>
 int power(int base, int exponent);
