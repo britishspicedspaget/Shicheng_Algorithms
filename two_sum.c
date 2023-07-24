@@ -1,3 +1,17 @@
+/* This is a C program to determine if two numbers in a array
+* add up to the same target number which all are inputted. 
+* This program can run on all integer inputs, negative or
+* positive, and can still generate the correct results.
+* All you need if you wish for float or decimal inputs
+* is just to convert everything that runs on INT to the 
+* FLOAT data type, just insure that when you input the size
+* of the attribute, that bit will remain to be an positive 
+* integer as otherwise the program cannot run.
+*
+* This HAS been copyrighted, do not copy.
+*
+* Copyright 2023, July 24th, 2023.
+*/
 #include <stdio.h>
 int main()
 {
