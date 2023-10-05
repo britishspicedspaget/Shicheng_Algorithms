@@ -1,4 +1,4 @@
-*/ This is a simple C program esigned to be a factorial, nCr, and nPr calculator.
+/* This is a simple C program esigned to be a factorial, nCr, and nPr calculator.
 * The algorithm for the factorial is as below, as well as the equation for the 
 * nCr and the nPr This version can only handle positive inputs, negative inputs 
 * will return erratic and wrong results.
@@ -6,6 +6,7 @@
 * please no copying.
 *
 * Shicheng.Z july 16th
+*/
 #include <stdio.h>
 int factorial(int number);
 int factorial(int number)
