@@ -1,3 +1,24 @@
+/*
+ * This is a solution to the UAPC23D1 Question K: Sneaky Exploration, under the U of A 
+ * Kattis questions. The aim is to find the number of paths that can be undertaken by a person 
+ * travelling from a defined number of buildings without travelling along specified roads 
+ * which connect individual buildings. 
+ * 
+ * For example, if you have 4 buildings, labelled 1 to 4 respectively, and there are routes marked
+ * between buildings [1, 2], [2, 3], [3, 4]. There are 3 possible routes that can be taken.
+ * 
+ * This program uses a permutation finder to find, in turn, at which of the buildings can a route 
+ * not be taken. Using these results, it deducts the possible ways in which a route can be taken, while 
+ * ensuring that it does not equal the values set at the beginning of all inputs (roads between buildings).
+ * In the end, the number printed out is the number of ways that travel without using roads can be under-
+ * taken with these combinations of roads set and their buildings (Assuming that only following the road 
+ * counts as an impossible route.)
+ * 
+ * Please give appropriate credit to this program should you choose to implement it in your own programs.
+ * 
+ * 10/11/24, Shicheng Z, Copyright 2024.
+ * 
+*/
 #include <stdio.h>
 int add_factorial (int number) {
     int temp = 0;
@@ -19,7 +40,7 @@ int add_factorial (int number) {
         scanf ("%d", &road_count [y][0]);
         printf ("Enter the ending building of this road: ");
         scanf ("%d", &road_count [y][1]);
-    } printf("The route that can be taken is: ");
+    } printf("The number of routes that can be taken is: ");
     for (int a = 0; a < num_of_buildings; a++) {
         int in_built_ban_list [num_of_buildings - 1];
         for (int e = 0; e < num_of_buildings - 1; e++) {
@@ -62,7 +83,7 @@ int add_factorial (int number) {
                     } else {
                         total = total - k;
                     }
-                } printf ("%d ", total);
+                } printf ("%d", total);
             }
         }
     }
