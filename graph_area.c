@@ -1,11 +1,12 @@
 /*
- * This is an algorithm to determine the area under the curve for any kind of graph with the form 
- * y = ax^n + bx^n-1 + cx^n-2 ..... nx^1 + (constant of choice). It currently uses the rectangle formula,
- * and can take in any formula or graphgiven as long as it belongs to one variable only. It uses rectangles
- * and therefore is not very accurate with a minimal amount of rectangles. However, a trapezoid formula and
- * a implementation of the Simpson's formula will shortly be programmed for versatility and better efficiency.
+ * This is an algorithm to determine the area under the curve for any graph with the form 
+ * y = ax^n + bx^n-1 + cx^n-2 ..... nx^1 + (constant of choice) + ax^-1 + bx^-2 ..... + nx^-n. It currently 
+ * uses the rectangle formula, and can take in any formula or graph given as long as it belongs to one variable
+ * only. It uses both the rectangle and trapezoid formula, which means that you place as many rectangles or 
+ * trapezoids underneath the graph with a y value of directly upon the graph and you estimate from the total
+ * area of those trapezoids and/or rectangles.
  * 
- * Please give appropiate credit should you choose to use this code in other programs.
+ * Please give appropriate credit should you use this code in other programs.
  * 
  * Copyright 2024, Shicheng Z, 23/11/24
 */
@@ -116,6 +117,45 @@ void main_algorithm () {
         } printf(" = %f units ^ 2.\n", total_area);
     } else if (formula_determinant == 1) {
         // Trapezoid Formula 
+        int trapezoid_amt = 0, lower_bound2 = 0, higher_bound2 = 0;
+        trapezoid_entry:
+        printf ("How many trapezoids will be needed for the calculation:");
+        scanf ("%d", &trapezoid_amt);
+        if (trapezoid_amt < 1) {
+            printf ("At least 1 trapezoid is required for this calculation.\n");
+            goto trapezoid_entry;
+        } lower_bound_input2:
+        printf ("What will be the lower bound of the graph:");
+        scanf ("%d", &lower_bound2);
+        if (lower_bound2 <= 0) {
+            printf ("The lower bound must be higher than 0.\n");
+            goto lower_bound_input2;
+        } higher_bound_input2:
+        printf ("What will be the higher bound:");
+        scanf ("%d", &higher_bound2);
+        if (higher_bound2 <= lower_bound2) {
+            printf ("The higher bound must be higher than the lower bound.\n");
+            goto higher_bound_input2;
+        } float avg_x2 = (higher_bound2 - lower_bound2) / (float) trapezoid_amt;
+        float concurrent_x_low2 = lower_bound2 - avg_x2;
+        float concurrent_x_high2 = lower_bound2;
+        float total_area2 = 0;
+        for (int b = 0; b < trapezoid_amt; b++) {
+            float concurrent_y_low2 = 0, concurrent_y_high2 = 0; 
+            concurrent_x_high2 = concurrent_x_high2 + avg_x2;
+            concurrent_x_low2 = concurrent_x_low2 + avg_x2;
+            for (int c = 0; c < total_size_all_power; c++) {
+                concurrent_y_high2 = concurrent_y_high2 + pow (concurrent_x_high2, array_x [c][0]) * array_x [c][1];
+                concurrent_y_low2 = concurrent_y_low2 + pow (concurrent_x_low2, array_x [c][0]) * array_x [c][1];
+            } total_area2 = total_area2 + ((concurrent_y_high2 + concurrent_y_low2) * avg_x2) / 2;
+        } printf ("Your total area of the graph ");
+        for (int d = 0; d < total_size_all_power; d++) {
+            if (d == total_size_all_power - 1) {
+                printf ("%d * (x ^ %d)", array_x [d][1], array_x [d][0]);
+            } else {
+                printf ("%d * (x ^ %d) + ", array_x [d][1], array_x [d][0]);
+            }
+        } printf(" = %f units ^ 2.\n", total_area2);
     } else {
         system ("clear");
         printf ("Invalid Choice, only options are 0 and 1.\n");
