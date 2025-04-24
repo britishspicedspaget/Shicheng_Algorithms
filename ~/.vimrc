@@ -17,6 +17,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'projekt0n/github-nvim-theme'
 Plug 'dense-analysis/ale'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -107,7 +108,7 @@ nnoremap <Leader>w- :vertical resize -5<CR>
 nnoremap <Leader>t :tabs<CR>
 
 " Sync open file with NERDTree
-function! IsNERDTreeOpen()        
+function! IsNERDTreeOpen()
   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
 endfunction
 
@@ -124,14 +125,14 @@ autocmd BufRead * call SyncTree()
 let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-pairs',
-  \ 'coc-tsserver',            
-  \ 'coc-eslint',                          
-  \ 'coc-json',                
-  \ 'coc-html',            
-  \ 'coc-clangd',              
-  \ 'coc-csharp',            
-  \ 'coc-java',                
-  \ 'coc-pyright',            
+  \ 'coc-tsserver',
+  \ 'coc-eslint',
+  \ 'coc-json',
+  \ 'coc-html',
+  \ 'coc-clangd',
+  \ 'coc-csharp',
+  \ 'coc-java',
+  \ 'coc-pyright',
   \ ]
 
 " Language-specific settings
