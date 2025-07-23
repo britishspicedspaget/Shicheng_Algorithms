@@ -13,7 +13,7 @@
  *
  * Please reference this program should you utilise it in your own code.
  *
- * Copyright 2025, Shicheng Z, 03/07/25
+ * Copyright 2025, Shicheng Z, 03/07/25. Updated 23/07/25.
  * */
 #include <stdio.h>
 void main_algorithm () {
