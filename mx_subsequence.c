@@ -8,7 +8,7 @@
  *
  * Please reference this program should you use it in your own code.
  *
- * Copyright 2025, Shicheng. Z, 29/06/25
+ * Copyright 2025, Shicheng. Z, 29/06/25, Updated 23/07/25.
  * */
 #include <stdio.h>
 void main_algorithm () {
