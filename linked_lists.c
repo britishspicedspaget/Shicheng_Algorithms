@@ -6,7 +6,7 @@
  * compensates for mini-list length discrepancy using a nullification mechanism, 
  * and then sorts the list.
  *
- * Example:
+ * Examples:
  *  [[1, 4, 5], [1, 3, 4], [2, 6]]
  *  Becomes:
  *  [1, 1, 2, 3, 4, 4, 5, 6]
