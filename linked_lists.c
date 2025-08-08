@@ -1,5 +1,5 @@
 /*
- * Leetcode Question 23. Merge K Sorted Kists
+ * Leetcode Question 23. Merge K Sorted Lists
  *
  * This is a solution to Leetcode Question 23: Merge k sorted lists. 
  * It uses a 2D array to store multiple lists, then stores it in one giant list,
