@@ -8,7 +8,7 @@
  * 
  * Please give appropriate credit should you use this code in other programs.
  * 
- * Copyright 2024, Shicheng Z, 23/11/24
+ * Copyright 2024, Shicheng Z, 05/09/25
 */
 #include <stdio.h>
 #include <stdlib.h>
