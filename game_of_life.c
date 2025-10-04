@@ -25,7 +25,7 @@
  *
  * Please refer to this program on my GitHub if you wish to utilise it in your own programs.
  *
- * Copyright 2025, 15/02/25, Shicheng Z
+ * Copyright 2025, 04/10/25, Shicheng Z
  *
  * */
 #define _POSIX_C_SOURCE 199309L
@@ -40,40 +40,28 @@ void sleeper (int milliseconds) {
 } int printout (int x_size, int y_size, int grid [y_size][x_size], int generation);
 int printout (int x_size, int y_size, int grid [y_size][x_size], int generation) {
     printf ("    ");
-    for (int x = 0; x < x_size; x++) {
-        printf ("%d   ", x % 10);
-    } printf (" x\n    ");
-    for (int x3 = 0; x3 < x_size; x3++) {
-        printf ("-   ");  
-    } printf ("\n"); 
+    for (int x = 0; x < x_size; x++) {printf ("%d   ", x % 10);} 
+    printf (" x\n    ");
+    for (int x3 = 0; x3 < x_size; x3++) {printf ("-   ");}
+    printf ("\n"); 
     for (int y = 0; y < y_size; y++) {
         printf ("%d |", y % 10);
         for (int x1 = 0; x1 < x_size; x1++) {
-            if (grid [y][x1] == 0) {
-                printf ("   |");
-            } else {
-                printf (" # |");
-            }
+            if (grid [y][x1] == 0) {printf ("   |");} 
+            else {printf (" # |");}
         } printf ("\n    ");
-        for (int x2 = 0; x2 < x_size; x2++) {
-            printf ("-   ");
-        } printf ("\n");
+        for (int x2 = 0; x2 < x_size; x2++) {printf ("-   ");}
+        printf ("\n");
     } printf ("y\n\nGeneration: %d\n", generation);
     return 0;
 } int life_machine (int neighbours, int life_state);
 int life_machine (int neighbours, int life_state) {
     if (life_state == 0) {
-        if (neighbours == 3) {
-            life_state = 1;
-        } else {
-            ;
-        }
+        if (neighbours == 3) {life_state = 1;} 
+        else {;}
     } else {
-        if ((neighbours == 2) || (neighbours == 3)) {
-            ;
-        } else {
-            life_state = 0;
-        }
+        if ((neighbours == 2) || (neighbours == 3)) {;}
+        else {life_state = 0;}
     } return life_state;
 } int find_neighbours (int size_x, int size_y, int main_grid [size_y][size_x], int sub_grid [size_y][size_x]); 
 int find_neighbours (int size_x, int size_y, int main_grid [size_y][size_x], int sub_grid [size_y][size_x]) {
@@ -86,22 +74,14 @@ int find_neighbours (int size_x, int size_y, int main_grid [size_y][size_x], int
                 for (int cx = 0; cx < 3; cx++) {
                     current_y = y4 + neighbour_vector [cy];
                     current_x = x4 + neighbour_vector [cx];
-                    if ((cx == 1) && (cy == 1)) {
-                        continue;
-                    } else {
+                    if ((cx == 1) && (cy == 1)) {continue;}
+                    else {
                         if ((current_x > -1) && (current_x < size_x)) {
                             if ((current_y > -1) && (current_y < size_y)) {
-                                if (main_grid [current_y][current_x] == 1) {
-                                    actual_neighbours++;
-                                } else {
-                                    ;
-                                }
-                            } else {
-                                continue;
-                            }
-                        } else {
-                            continue;
-                        }
+                                if (main_grid [current_y][current_x] == 1) {actual_neighbours++;}
+                                else {;}
+                            } else {continue;}
+                        } else {continue;}
                     }
                 }
             } sub_grid [y4][x4] = life_machine (actual_neighbours, main_grid [y4][x4]);
@@ -111,9 +91,7 @@ int find_neighbours (int size_x, int size_y, int main_grid [size_y][size_x], int
 } int reaffixtion (int size_x, int size_y, int main_grid [size_y][size_x], int sub_grid [size_y][size_x]);
 int reaffixtion (int size_x, int size_y, int main_grid [size_y][size_x], int sub_grid [size_y][size_x]) {
     for (int y5 = 0; y5 < size_y; y5++) {
-        for (int x5 = 0; x5 < size_x; x5++) {
-            main_grid [y5][x5] = sub_grid [y5][x5];
-        }
+        for (int x5 = 0; x5 < size_x; x5++) {main_grid [y5][x5] = sub_grid [y5][x5];}
     } return 0;
 } void main_algorithm () {
     //Game mode is always set to automatically generate
@@ -187,11 +165,9 @@ int reaffixtion (int size_x, int size_y, int main_grid [size_y][size_x], int sub
         re_input_delay:
         printf ("Having a delay time under 75 ms is not recommended. If you wish to continue, enter 1, if not, enter 0:");
         scanf ("%d", &continuation);
-        if (continuation == 0) {
-            goto delay_reinput;
-        } else if (continuation == 1) {
-            ;
-        } else {
+        if (continuation == 0) {goto delay_reinput;} 
+        else if (continuation == 1) {;} 
+        else {
             printf ("Invalid Choice.\n");
             goto re_input_delay;
         }
